@@ -42,5 +42,24 @@ public class produceNextGenerationTest {
 		// Then
 		assertArrayEquals(result, game.getCurrentBoard());		
 	}
+	
+	@Test
+	public void runTwoTurnsAndCheckIfBoardStateIsChanged() {
+		// Given
+		Integer[][] source = 
+		{{0,0,1,1,0},
+		{1,1,1,0,0},
+		{0,0,0,1,0}};
+		Integer[][] result = 
+		{{0,0,1,0,0},
+		{0,1,0,1,0},
+		{0,1,1,0,0}};
+		GameofLife game = new GameofLife(source);
+		//When
+		game.runTurn();
+		game.runTurn();
+		// Then
+		assertArrayEquals(result, game.getCurrentBoard());		
+	}
 
 }

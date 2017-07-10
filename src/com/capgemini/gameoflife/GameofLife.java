@@ -6,7 +6,7 @@ public class GameofLife {
 	private Integer[][] board;
 	private Integer rows;
 	private Integer cols;
-	private Long turn_counter = 0L;
+
 	
 	public GameofLife (Integer[][] board) {
 		this.board = board;
@@ -15,7 +15,6 @@ public class GameofLife {
 	}
 	
 	public void runTurn() {
-		turn_counter++;
 		
 		Integer[][] temporary_board = cloneArray(board);
 		produceNextGeneration(temporary_board);

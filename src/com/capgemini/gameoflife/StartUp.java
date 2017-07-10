@@ -14,6 +14,7 @@ public class StartUp {
 		System.out.println();
 
 		game.runTurn();
+
 		board = game.getCurrentBoard();
 		
 		System.out.println();
