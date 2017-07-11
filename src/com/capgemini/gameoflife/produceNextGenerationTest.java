@@ -24,9 +24,21 @@ public class produceNextGenerationTest {
 		// Then
 		assertArrayEquals(result, game.getCurrentBoard());
 	}
+	
+	@Test
+	public void simplestCaseOfRevival() {
+		// Given
+		Integer[][] source = {{1, 0}, {1, 1}};
+		Integer[][] result = {{1, 1}, {1, 1}};
+		GameofLife game = new GameofLife(source);
+		//When
+		game.runTurn();
+		// Then
+		assertArrayEquals(result, game.getCurrentBoard());
+	}
 		
 	@Test
-	public void assymetricMatrix() {
+	public void assymetricMatrixWithRevivalAndDeath() {
 		// Given
 		Integer[][] source = 
 		{{0,0,1,1,0},
